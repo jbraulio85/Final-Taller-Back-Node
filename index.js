@@ -20,12 +20,12 @@ app.post('/generarEnunciado', (req, res) => {
     db.query(sp1, [carne, numeroAleatorio], (err1) => {
       if (err1) {
         console.error('Error al generar el enunciado:', err1);
-        res.status(500).json({success: false, error: 'Error al generar el enunciado' });
+        res.status(500).json({success: false, error: 'Error al generar el enunciado' + err1 });
       } else {
         db.query(sp2, [numeroAleatorio], (err2, results) => {
           if (err2) {
             console.error('Error al buscar el enunciado:', err2);
-            res.status(500).json({success:false, error: 'Error al buscar el enunciado' });
+            res.status(500).json({success:false, error: 'Error al buscar el enunciado' + err2 });
           } else {
             const enunciado = results[0][0];
             res.status(200).json({success: true, enunciado});
