@@ -7,13 +7,12 @@ const mysql = require('mysql2');
   database: 'busuhwwiumur94gftjs8',
 });*/
 
-jdbc:mysql://dbdev.kinal.edu.gt:3306/?user=diegobarrascout
 
 const db = mysql.createConnection({
-  host: '127.0.0.1',
-  user: 'jecheverria',
-  password: 'root',
-  database: 'finaltaller',
+  host: 'dbdev.kinal.edu.gt',
+  user: 'diegobarrascout',
+  password: 'y%XNvghnp3;P2Zy$Us~4',
+  database: 'finalTaller',
 });
 
 db.connect((err) => {
